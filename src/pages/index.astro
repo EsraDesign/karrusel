@@ -1,16 +1,37 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
 
+import Card from "../components/Card.astro";
+
+import Button from "../components/Button.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<MainLayout>
+	<h1>
+		Test
+	</h1>
+	<div class="container">
+
+		<Card title="hej" body="jeg er bfueef" />
+		<Card title="hej" />
+		<Card title="hej" />
+		<Card title="hej" />
+		<Card title="hej" />
+		<Card title="hej" />
+		<Card title="hej" />
+		<Card title="hej" />
+	</div>
+	<Button>Jeg er button</Button>
+</MainLayout>
+
+<style>
+	.container{
+		display: flex;
+	}
+
+	.Button{
+		background-color: white;
+	}
+	
+</style>
