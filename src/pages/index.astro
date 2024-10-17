@@ -1,4 +1,6 @@
 ---
+const name = await fetch("https://awivsnmnfdowxppafuru.supabase.co/rest/v1/Karruselfestival").then(response => response.json());
+
 import MainLayout from "../layouts/MainLayout.astro";
 
 import Card from "../components/Card.astro";
@@ -30,7 +32,8 @@ import Button from "../components/Button.astro";
 		display: flex;
 	}
 
-	.Button{
+	.button{
+		width: 100px;
 		background-color: white;
 	}
 	
