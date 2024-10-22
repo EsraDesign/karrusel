@@ -1,0 +1,50 @@
+---
+
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Header from "../components/Header.astro";
+
+import Sliding from "../components/Sliding.astro";
+
+import Footer from "../components/Footer.astro";
+
+
+const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup";
+const options = {
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3aXZzbm1uZmRvd3hwcGFmdXJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkwOTE2NzYsImV4cCI6MjA0NDY2NzY3Nn0.qeq-bWPa4fkVhT8APkxi2bot4ZszWILcenniSoCmpcw"
+	}
+};
+
+
+const response = await fetch(url, options);
+const data = await response.json();
+console.log(data)
+---
+
+<MainLayout>
+
+<Sliding>
+<Header>
+
+<h1>THURSDAY / 22 AUG</h1>
+<h1>FRIDAY / 23 AUG</h1>
+<h1>SATURDAY / 24 AUG</h1>
+
+</MainLayout>
+<Footer>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ h1{
+	font-family: Arial, Helvetica, sans-serif;
+ }
+
+
+</style>

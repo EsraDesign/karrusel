@@ -1,0 +1,67 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+---
+
+
+    <header class="main-header">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.main-header {
+    padding: 30px 0; /* Spacing inside the header */
+    text-align: center; /* Center align content in the header */
+}
+
+/* Style for the navigation */
+.nav-links {
+    list-style: none; /* Remove bullet points from the list */
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center the items */
+}
+
+/* Style for the individual links */
+.nav-links li {
+    margin: 0 30px; /* Add space between the links */
+}
+
+/* Style for the anchor links */
+.nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Set link color to white */
+    font-size: 18px; /* Increase font size */
+    font-weight: light; /* Make the text bold */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+    border: solid white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+</style>

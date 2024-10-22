@@ -1,35 +1,25 @@
 ---
-const name = await fetch("https://awivsnmnfdowxppafuru.supabase.co/rest/v1/Karruselfestival").then(response => response.json());
+import Header from "../components/Header.astro";
 
 import MainLayout from "../layouts/MainLayout.astro";
 
-import Card from "../components/Card.astro";
-
-import Button from "../components/Button.astro";
 ---
 
 
 <MainLayout>
+	<Header></Header>
 	<h1>
-		Test
+		KARRUSEL FESTIVAL
 	</h1>
-	<div class="container">
 
-		<Card title="hej" body="jeg er bfueef" />
-		<Card title="hej" />
-		<Card title="hej" />
-		<Card title="hej" />
-		<Card title="hej" />
-		<Card title="hej" />
-		<Card title="hej" />
-		<Card title="hej" />
-	</div>
-	<Button>Jeg er button</Button>
 </MainLayout>
 
 <style>
-	.container{
-		display: flex;
+	
+
+	h1{
+		text-align: center;
+
 	}
 
 	.button{

@@ -1,0 +1,52 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+
+export async function getStaticPaths() {
+  const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup"
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3aXZzbm1uZmRvd3hwcGFmdXJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkwOTE2NzYsImV4cCI6MjA0NDY2NzY3Nn0.qeq-bWPa4fkVhT8APkxi2bot4ZszWILcenniSoCmpcw"
+    }
+  }
+  
+  const artists = await fetch(url, options).then(res=>res.json())
+  
+  return artists.map(artist => ({
+      params: { artist: artist.slug }, 
+      props: { artist } 
+    }))
+}
+const { artist } = Astro.props;
+console.log(artist) 
+---
+
+<MainLayout>
+  <h1>singleview  </h1>
+</MainLayout>
+
+
+<style>
+  h1{
+    text-align: center;
+  }
+</style>
+
+
+
+
+
+<!-- ---
+const artists = await fetch("https://fetch-with-astro.netlify.app/api/artists").then(response => response.json());
+---
+
+<ul>
+    {
+        artists.map(artist => (
+        <li>
+            <h3>{artist.title}</h3>
+            <p>{artist.type}</p>
+            <img src={artist.og_image.url} alt="billede">
+            </li>
+            ))
+    }
+</ul>  -->
