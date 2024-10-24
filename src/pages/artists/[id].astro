@@ -1,0 +1,16 @@
+---
+export async function getStaticPaths() {
+  const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup"
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3aXZzbm1uZmRvd3hwcGFmdXJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkwOTE2NzYsImV4cCI6MjA0NDY2NzY3Nn0.qeq-bWPa4fkVhT8APkxi2bot4ZszWILcenniSoCmpcw"
+    }
+  }
+const artists = await fetch(url, options).then(res=>res.json())
+  
+  return artists.map(artist => ({
+      params: { artist: artist.id }, 
+      props: { artist } 
+    }))
+}
+---
