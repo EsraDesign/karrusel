@@ -33,6 +33,11 @@ console.log(artist);
 
 <Header />
 <MainLayout>
+  <div class="img-background">
+ <div class="back-button-container">
+    <a class="back" href="lineup">Back</a>
+  </div>
+
  <div class="center-container">
   <article class="artist-grid">
     <div class="artist-image">
@@ -49,8 +54,7 @@ console.log(artist);
     </div>
   </article>
   </div>
-
-
+  
 <h3>SEE ARTISTS PLAYING THE SAME DAY</h3>
   <article class="more-artists">
 <div>
@@ -66,7 +70,9 @@ console.log(artist);
   <img src="public/marlon-hoffstadt.webp" alt="other artist">
 </div>
   </article>
-<Form></Form>
+  </div>
+<Form>
+</Form>
 <Sliding></Sliding>
 <Footer></Footer>
 </MainLayout>
@@ -74,6 +80,9 @@ console.log(artist);
 
   <style>
 
+.img-background {
+  background-image: url('public/background.webp');
+}
 
 .center-container {
   display: flex;
@@ -81,7 +90,9 @@ console.log(artist);
   align-items: center;
   justify-content: center;
   width: 100%; /* Ensure full width */
-  height: 100vh; 
+  height: auto; /* Change height to auto to allow dynamic resizing */
+  padding: 20px 0; /* Add vertical padding for breathing room */
+  
 }
 
 .artist-grid {
@@ -89,13 +100,14 @@ console.log(artist);
   grid-template-columns: auto 1fr; 
   align-items: center;
   justify-content: center; /* Center the grid items horizontally */
-  gap: 20px;
-  max-width: 800px; /* Limit the width of the grid to bring things closer */
+  gap: 10px; /* Reduce gap between items */
+  max-width: 800px; /* Keep this to limit width */
   margin: 0 auto; /* Center the grid within the parent */
+  padding: 10px; /* Add a bit of padding inside the grid */
 }
 
 .artist-image img {
-  width: 300px;
+  width: 250px; /* Adjust width if necessary */
   height: auto;
   display: block;
   margin: 0 auto; /* Center the image */
@@ -103,9 +115,9 @@ console.log(artist);
 
 .artist-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align items to the start */
   justify-content: center; /* Center the content horizontally */
-  gap: 20px;
+  gap: 15px; /* Reduce gap between artist name and details */
 }
 
 h2.artist-name {
@@ -152,3 +164,25 @@ h3 {
   text-align: center;
   margin: 2rem; 
 }
+
+.back-button-container {
+  display: flex;
+ 
+  margin-top: 20px; 
+}
+  a {
+    text-decoration: none;
+  }
+
+  .back {
+    color: white;
+    border: solid white;
+    border-radius: 10px;
+    margin: 25px;
+    padding: 15px;
+  }
+
+  .back:hover {
+    border: solid #ff1040;
+    transition: 0.1s ease-in-out;
+  }
