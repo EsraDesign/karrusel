@@ -7,6 +7,8 @@ import Header from "../components/Header.astro";
 
 import Sliding from "../components/Sliding.astro";
 
+import Form from "../components/Form.astro";
+
 const options = {
   headers: {
     apikey:
@@ -80,6 +82,8 @@ const dataSaturday = await responseSaturday.json();
     </ul>
   </div>
   <Sliding />
+
+  <Form />
 
   <style>
     h2 {
