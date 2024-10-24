@@ -1,30 +1,66 @@
-<div class="slider">
-    <div class="slides">
-        <div class="slide">22-24 AUGUST </div>
-        <div class="slide">22-24 AUGUST</div>
-        <div class="slide">22-24 AUGUST</div>
-        <div class="slide">22-24 AUGUST</div>
-        <div class="slide">22-24 AUGUST</div>
-    </div>
+<div class="container">
+  <div class="left-to-right">
+    Buy Tickets Buy Tickets Buy Tickets Buy Tickets Buy Tickets Buy Tickets Buy
+    Tickets
+  </div>
+  <div class="right-to-left">
+    28-30 AUG 2025 28-30 AUG 2025 28-30 AUG 2025 28-30 AUG 2025 28-30 AUG 2025
+  </div>
+</div>
 
-    <style>
-       /* Basic reset */
-* {
+<style>
+  /* Basic reset */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
+  .container {
+    position: relative;
+    padding: 20px;
+    overflow: hidden; /* Prevents content from spilling outside */
+  }
 
-
-.slides {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    padding: 10px;
+  .left-to-right,
+  .right-to-left {
+    position: relative;
+    top: 40%; /* Adjusts the vertical positioning */
+    white-space: nowrap; /* Prevents wrapping of text */
+    padding: 15px;
+    font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
+  }
 
-    
-}
+  /* Animation for left-to-right sliding */
+  .left-to-right {
+    left: -100%; /* Start off-screen to the left */
+    animation: slide-left-right 14s linear infinite;
+    font-style: italic;
+  }
 
+  /* Animation for right-to-left sliding */
+  .right-to-left {
+    right: -100%; /* Start off-screen to the right */
+    animation: slide-right-left 14s linear infinite;
+  }
 
-    </style>
+  /* Keyframes for left-to-right sliding */
+  @keyframes slide-left-right {
+    0% {
+      transform: translateX(-10vw); /* Start off the screen on the left */
+    }
+    100% {
+      transform: translateX(200vw); /* Move all the way to the right */
+    }
+  }
+
+  /* Keyframes for right-to-left sliding */
+  @keyframes slide-right-left {
+    0% {
+      transform: translateX(10vw);
+    }
+    100% {
+      transform: translateX(-200vw); /* Move all the way to the left */
+    }
+  }
+</style>

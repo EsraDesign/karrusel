@@ -1,32 +1,22 @@
 ---
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 import MainLayout from "../layouts/MainLayout.astro";
-
-import Form from "../components/Form.astro";
 ---
 
-
 <MainLayout>
-	<Header></Header>
-	<h1>
-		KARRUSEL FESTIVAL
-	</h1>
-
-<Form />
+  <Header />
+  <h1>KARRUSEL FESTIVAL</h1>
 </MainLayout>
 
 <style>
-	
+  h1 {
+    text-align: center;
+  }
 
-	h1{
-		text-align: center;
-
-	}
-
-	.button{
-		width: 100px;
-		background-color: white;
-	}
-	
+  .button {
+    width: 100px;
+    background-color: white;
+  }
 </style>

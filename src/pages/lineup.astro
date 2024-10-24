@@ -1,4 +1,5 @@
 ---
+import "../styles/style.css";
 
 import MainLayout from "../layouts/MainLayout.astro";
 
@@ -6,45 +7,119 @@ import Header from "../components/Header.astro";
 
 import Sliding from "../components/Sliding.astro";
 
-import Footer from "../components/Footer.astro";
+import Form from "../components/Form.astro";
 
-
-const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup";
 const options = {
-	headers: {
-		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3aXZzbm1uZmRvd3hwcGFmdXJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkwOTE2NzYsImV4cCI6MjA0NDY2NzY3Nn0.qeq-bWPa4fkVhT8APkxi2bot4ZszWILcenniSoCmpcw"
-	}
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3aXZzbm1uZmRvd3hwcGFmdXJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkwOTE2NzYsImV4cCI6MjA0NDY2NzY3Nn0.qeq-bWPa4fkVhT8APkxi2bot4ZszWILcenniSoCmpcw",
+  },
 };
+const urlThursday =
+  "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup?day=eq.Thursday&order=time";
 
+const responseThursday = await fetch(urlThursday, options);
+const dataThursday = await responseThursday.json();
 
-const response = await fetch(url, options);
-const data = await response.json();
-console.log(data)
+const urlFriday =
+  "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup?day=eq.Friday&order=time";
+
+const responseFriday = await fetch(urlFriday, options);
+const dataFriday = await responseFriday.json();
+
+const urlSaturday =
+  "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup?day=eq.Saturday&order=time";
+
+const responseSaturday = await fetch(urlSaturday, options);
+const dataSaturday = await responseSaturday.json();
 ---
 
 <MainLayout>
+  <Header />
 
-<Sliding>
-<Header>
+  <div class="lilla">
+    <h2>THURSDAY / 22 AUG</h2>
+    <ul>
+      {
+        dataThursday.map((artist) => (
+          <li class="li_row">
+            <div>{artist.time}</div>
+            <div>{artist.artist}</div>
+            <div>{artist.scene}</div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 
-<h1>THURSDAY / 22 AUG</h1>
-<h1>FRIDAY / 23 AUG</h1>
-<h1>SATURDAY / 24 AUG</h1>
+  <div class="hvid">
+    <h2 class="lillatekst">FRIDAY / 23 AUG</h2>
+    <ul class="lillatekst">
+      {
+        dataFriday.map((artist) => (
+          <li class="li_row">
+            <div>{artist.time}</div>
+            <div>{artist.artist}</div>
+            <div>{artist.scene}</div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 
+  <div class="lilla">
+    <h2>SATURDAY / 24 AUG</h2>
+    <ul>
+      {
+        dataSaturday.map((artist) => (
+          <li class="li_row">
+            <div>{artist.time}</div>
+            <div>{artist.artist}</div>
+            <div>{artist.scene}</div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <Sliding />
+
+  <Form />
+
+  <style>
+    h2 {
+      color: white;
+      margin-left: 30px;
+      padding-top: 15px;
+      font-size: 2em;
+    }
+
+    .lilla {
+      background-color: rgba(128, 7, 217, 1);
+      height: 600px;
+    }
+
+    .hvid {
+      background-color: white;
+      height: 700px;
+    }
+
+    .li_row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .li_row div {
+      width: 25%;
+      font-size: 1.5rem;
+    }
+
+    .lillatekst {
+      color: rgba(128, 7, 217, 1);
+    }
+
+    ul {
+      margin: 40px;
+    }
+  </style>
 </MainLayout>
-<Footer>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
- h1{
-	font-family: Arial, Helvetica, sans-serif;
- }
-
-
-</style>

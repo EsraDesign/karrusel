@@ -1,67 +1,73 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-
-    <header class="main-header">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-</body>
-</html>
+<header class="mainNav">
+  <a href="index.html"><h1>KARRUSEL</h1></a>
+  <nav>
+    <a class="navKnap" href="kategori.html">BUY TICKETS</a>
+    <a class="navKnap" href="kategori.html">LINE-UP</a>
+    <a class="navKnap" href="kategori.html">MAP</a>
+  </nav>
+  <slot />
+</header>
 
 <style>
-
-
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
-body {
+  body {
     font-family: Arial, Helvetica, sans-serif;
-    
-}
+  }
 
-.main-header {
-    padding: 30px 0; /* Spacing inside the header */
-    text-align: center; /* Center align content in the header */
-}
-
-/* Style for the navigation */
-.nav-links {
-    list-style: none; /* Remove bullet points from the list */
-    display: flex; /* Align items horizontally */
-    justify-content: center; /* Center the items */
-}
-
-/* Style for the individual links */
-.nav-links li {
-    margin: 0 30px; /* Add space between the links */
-}
-
-/* Style for the anchor links */
-.nav-links a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Set link color to white */
-    font-size: 18px; /* Increase font size */
-    font-weight: light; /* Make the text bold */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Hover effect for links */
-.nav-links a:hover {
-    border: solid white;
+  header {
+    position: sticky;
+    top: 0; /* Sticks at the top */
+    z-index: 1000;
     padding: 10px;
+    background-color: rgba(45, 0, 79, 1);
+  }
+
+  .mainNav h1 span {
+    display: inline-block;
+    transform: scaleX(-1) translateX(-0.2rem);
+    color: var(--off-color);
+  }
+  .mainNav > * {
+    margin: 0;
+  }
+  @media screen and (min-width: 700px) {
+    .mainNav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .mainNav h1 {
+    margin-right: auto;
+  }
+
+  .mainNav > a {
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .navKnap {
+    color: white;
     border-radius: 10px;
-}
+    margin: 25px;
+    padding: 15px;
+  }
 
-
+  .navKnap:hover {
+    border: solid #ff1040;
+    transition: 0.1s ease-in-out;
+  }
 </style>
