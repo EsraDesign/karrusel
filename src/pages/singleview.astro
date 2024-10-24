@@ -1,6 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 
+import Header from "../components/Header.astro";
+
+import Sliding from "../components/Sliding.astro";
+
+import Footer from "../components/Footer.astro";
+
 export async function getStaticPaths() {
   const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup"
   const options = {
@@ -12,7 +18,7 @@ export async function getStaticPaths() {
   const artists = await fetch(url, options).then(res=>res.json())
   
   return artists.map(artist => ({
-      params: { artist: artist.slug }, 
+      params: { artist: artist.id }, 
       props: { artist } 
     }))
 }
@@ -20,9 +26,22 @@ const { artist } = Astro.props;
 console.log(artist) 
 ---
 
+<a href=""></a>
 <MainLayout>
+<article>
+  <img src="" alt="artist picture">
+  <h2></h2>
+  <p></p>
+  <p></p>
+  <p></p>
+</article>
+
   <h1>singleview  </h1>
+
+<Sliding>
+
 </MainLayout>
+
 
 
 <style>
