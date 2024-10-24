@@ -45,10 +45,27 @@ console.log(artist);
         <p class="time">23:00:00</p>
         <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
-      <h2 class="artist-name">Martin Hoffstadt (DE)</h2>
+      <h2 class="artist-name">MARLON HOFFSTADT (DE)</h2>
     </div>
   </article>
   </div>
+
+
+<h3>SEE ARTISTS PLAYING THE SAME DAY</h3>
+  <article class="more-artists">
+<div>
+  <img src="public/marlon-hoffstadt.webp" alt="other artist">
+</div>
+<div>
+  <img src="public/marlon-hoffstadt.webp" alt="other artist">
+</div>
+<div>
+  <img src="public/marlon-hoffstadt.webp" alt="other artist">
+</div>
+<div>
+  <img src="public/marlon-hoffstadt.webp" alt="other artist">
+</div>
+  </article>
 <Form></Form>
 <Sliding></Sliding>
 <Footer></Footer>
@@ -56,6 +73,8 @@ console.log(artist);
 
 
   <style>
+
+
 .center-container {
   display: flex;
   flex-direction: column;
@@ -101,11 +120,35 @@ h2.artist-name {
   gap: 5px;
 }
 
-h2, p {
+h2, h3, p {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+.more-artists {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Use repeat for cleaner syntax */
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Add some gap between the images */
+  max-width: 900px; /* Control the overall width of the grid */
+  margin: 0 auto; /* Center the grid within its container */
+  padding: 2rem;
+  padding-bottom: 5rem;
+}
+
+.more-artists img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto; /* Center the images inside each grid cell */
+}
+
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
+}
+
+h3 {
+  text-align: center;
+  margin: 2rem; 
 }
