@@ -45,8 +45,53 @@ console.log(artist);
   <Sliding />
 
   <style>
-    h1 {
-      text-align: center;
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem;
+    }
+
+    /* Main layout for artist info and image */
+    .artist-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Styling for the image */
+    .artist-image img {
+      width: 200px;
+      height: auto;
+    }
+
+    /* Styling for the text and artist details */
+    .artist-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Rotated artist name */
+    h2.artist-name {
+      transform: rotate(90deg);
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    /* Styling for artist details */
+    .artist-details {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* Text styling */
+    h2,
+    p {
+      color: white;
     }
   </style>
 
