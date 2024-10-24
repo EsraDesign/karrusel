@@ -9,8 +9,61 @@
 	</head>
 	<body>
 		<footer>
-            
-        </footer>
+<div class="social-media">
+    <div class="vertical-icons">
+        <div>
+            <img src="/public/icon-facebook.webp" alt="Facebook Icon">
+        </div>
+        <div>
+            <img src="public/icon-instagram.webp" alt="Instagram Icon">
+        </div>
+    </div>
+    <div class="karrusel">
+        <img src="public/icon-karrusel.webp" alt="Karrusel Icon">
+    </div>
+</div>
 
+        </footer>
 	</body>
 </html>
+
+<style>
+
+footer {
+	margin-top: 5rem;
+}
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.vertical-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    position: absolute;
+    left: 0; 
+}
+
+.vertical-icons div {
+    margin-bottom: 10px;
+}
+.vertical-icons img {
+height: auto;
+width: 25px;
+}
+
+.karrusel {
+    margin: auto;
+}
+
+.karrusel img {
+    display: block;
+    margin: 0 auto; 
+	height: auto;
+	width: 100px;
+}
+
+</style>

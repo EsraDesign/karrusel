@@ -7,8 +7,10 @@ import Sliding from "../components/Sliding.astro";
 
 import Footer from "../components/Footer.astro";
 
+import Form from "../components/Form.astro";
+
 export async function getStaticPaths() {
-  const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup"
+  const url = "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup?"
   const options = {
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3aXZzbm1uZmRvd3hwcGFmdXJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkwOTE2NzYsImV4cCI6MjA0NDY2NzY3Nn0.qeq-bWPa4fkVhT8APkxi2bot4ZszWILcenniSoCmpcw"
@@ -27,7 +29,10 @@ console.log(artist)
 ---
 
 <a href=""></a>
+<Header></Header>
 <MainLayout>
+  
+  <h1>singleview  </h1>
 <article>
   <img src="" alt="artist picture">
   <h2></h2>
@@ -35,11 +40,8 @@ console.log(artist)
   <p></p>
   <p></p>
 </article>
-
-  <h1>singleview  </h1>
-
-<Sliding>
-
+<Form></Form>
+<Footer></Footer>
 </MainLayout>
 
 
