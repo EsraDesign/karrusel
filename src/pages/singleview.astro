@@ -7,6 +7,8 @@ import Sliding from "../components/Sliding.astro";
 
 import Footer from "../components/Footer.astro";
 
+import Form from "../components/Form.astro";
+
 export async function getStaticPaths() {
   const url =
     "https://awivsnmnfdowxppafuru.supabase.co/rest/v1/karrusel_lineup";
@@ -28,19 +30,27 @@ const { artist } = Astro.props;
 console.log(artist);
 ---
 
-<a href=""></a>
+<Header />
 <MainLayout>
+  <article>
+    <img src="" alt="artist picture" />
+    <h2></h2>
+    <p></p>
+    <p></p>
+    <p></p>
+  </article>
+
   <h1>singleview</h1>
-</MainLayout>
 
-<style>
-  h1 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-</style>
+  <Sliding />
 
-<!-- ---
+  <style>
+    h1 {
+      text-align: center;
+    }
+  </style>
+
+  <!-- ---
 const artists = await fetch("https://fetch-with-astro.netlify.app/api/artists").then(response => response.json());
 ---
 
@@ -55,3 +65,4 @@ const artists = await fetch("https://fetch-with-astro.netlify.app/api/artists").
             ))
     }
 </ul>  -->
+</MainLayout>
